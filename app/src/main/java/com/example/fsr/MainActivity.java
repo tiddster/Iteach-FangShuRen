@@ -1,28 +1,36 @@
 package com.example.fsr;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import com.example.fsr.bean.TabInfo;
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
     private TabLayout mainTabLayout, subTabLayout;
     private TabInfo tabInfo = new TabInfo();
-    private String[] Content = tabInfo.getContentOfFang();
+    private String[] Content;
     private ViewPager mViewPager;
+    private PagerAdapter mPagerAdapter;
+    private List<Fragment> mFragmentList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mViewPager = findViewById(R.id.viewpager);
 
         initView();
+        listener();
     }
 
     public void initView(){
@@ -32,14 +40,15 @@ public class MainActivity extends AppCompatActivity{
     public void initTabLayout(){
         subTabLayout = findViewById(R.id.SubTitleTab);
         mainTabLayout = findViewById(R.id.MainTitleTab);
+    }
 
-        for(int i=0; i<Content.length; i++){
-            subTabLayout.addTab(subTabLayout.newTab().setText(Content[i]));
-        }
-
+    public void listener(){
         mainTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                mFragmentList = new ArrayList<>();
+
                 switch (tab.getPosition()){
                     case 0:
                         Content = tabInfo.getContentOfFang();
@@ -53,11 +62,17 @@ public class MainActivity extends AppCompatActivity{
                     case 3:
                         Content = new String[]{"附加物"};
                         break;
+                    case 4:
+                        finish();
                 }
                 subTabLayout.removeAllTabs();
                 for(int i=0; i<Content.length; i++){
                     subTabLayout.addTab(subTabLayout.newTab().setText(Content[i]));
+                    mFragmentList.add(new PagerFragment());
                 }
+                mPagerAdapter = new PagerAdapter(getSupportFragmentManager(),mFragmentList);
+                mViewPager.setAdapter(mPagerAdapter);
+                subTabLayout.setupWithViewPager(mViewPager);
             }
 
             @Override
@@ -71,4 +86,29 @@ public class MainActivity extends AppCompatActivity{
             }
         });
     }
+
+    public class PagerAdapter extends FragmentPagerAdapter {
+        public List<Fragment> mFragmentList;
+        public PagerAdapter(@NonNull FragmentManager fm, List<Fragment> fragments) {
+            super(fm);
+            mFragmentList = fragments;
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return Content[position];
+        }
+    }
+
 }
