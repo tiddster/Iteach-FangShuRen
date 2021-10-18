@@ -18,61 +18,64 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity{
     private TabLayout mainTabLayout, subTabLayout;
     private TabInfo tabInfo = new TabInfo();
-    private String[] Content;
+    private String[] Content = tabInfo.getContentOfFang();
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
     private List<Fragment> mFragmentList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(savedInstanceState != null){
+            String FRAGMENTS_TAG = "android:support:fragments";
+            // remove saved fragment, will new fragment in mPagerAdapter
+            savedInstanceState.remove(FRAGMENTS_TAG);
+        }
+        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        mViewPager = findViewById(R.id.viewpager);
 
         initView();
         listener();
     }
 
     public void initView(){
+        mViewPager = findViewById(R.id.viewpager);
         initTabLayout();
     }
 
     public void initTabLayout(){
         subTabLayout = findViewById(R.id.SubTitleTab);
         mainTabLayout = findViewById(R.id.MainTitleTab);
+        initPagerAndTab();
     }
 
     public void listener(){
+        //利用监听器来设置文本内容
         mainTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 mFragmentList = new ArrayList<>();
-
                 switch (tab.getPosition()){
                     case 0:
                         Content = tabInfo.getContentOfFang();
                         break;
                     case 1:
-                        Content = tabInfo.getContentOfRen();
-                        break;
-                    case 2:
                         Content = tabInfo.getContentOfShu();
                         break;
+                    case 2:
+                        Content = tabInfo.getContentOfRen();
+                        break;
                     case 3:
-                        Content = new String[]{"附加物"};
+                        Content = new String[]{"附加物","背景"};
                         break;
                     case 4:
                         finish();
                 }
+                //先将上一次的tab清空
                 subTabLayout.removeAllTabs();
-                for(int i=0; i<Content.length; i++){
-                    subTabLayout.addTab(subTabLayout.newTab().setText(Content[i]));
-                    mFragmentList.add(new PagerFragment());
-                }
-                mPagerAdapter = new PagerAdapter(getSupportFragmentManager(),mFragmentList);
-                mViewPager.setAdapter(mPagerAdapter);
-                subTabLayout.setupWithViewPager(mViewPager);
+                mFragmentList.clear();
+                initPagerAndTab();
             }
 
             @Override
@@ -85,6 +88,18 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
+    }
+
+    public void initPagerAndTab(){
+        //根据标题的长度来设置tab和pager,并将title传到fragment中
+        for(int i=0; i<Content.length; i++){
+            subTabLayout.addTab(subTabLayout.newTab().setText(Content[i]));
+            mFragmentList.add(new PagerFragment(Content[i]));
+        }
+        //将pager和tab绑定起来
+        mPagerAdapter = new PagerAdapter(getSupportFragmentManager(),mFragmentList);
+        mViewPager.setAdapter(mPagerAdapter);
+        subTabLayout.setupWithViewPager(mViewPager);
     }
 
     public class PagerAdapter extends FragmentPagerAdapter {
@@ -109,6 +124,13 @@ public class MainActivity extends AppCompatActivity{
         public CharSequence getPageTitle(int position) {
             return Content[position];
         }
+
+        @Override
+        public int getItemPosition(@NonNull Object object) {
+//        return super.getItemPosition(object);
+            return PagerAdapter.POSITION_NONE;
+        }
+
     }
 
 }
