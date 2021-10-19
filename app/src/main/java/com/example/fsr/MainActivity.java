@@ -2,12 +2,14 @@ package com.example.fsr;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import com.example.fsr.bean.TabInfo;
 import com.google.android.material.tabs.TabLayout;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
+    private ConstraintLayout mConstraintLayout;
     private TabLayout mainTabLayout, subTabLayout;
     private TabInfo tabInfo = new TabInfo();
     private String[] Content = tabInfo.getContentOfFang();
@@ -25,14 +28,7 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if(savedInstanceState != null){
-            String FRAGMENTS_TAG = "android:support:fragments";
-            // remove saved fragment, will new fragment in mPagerAdapter
-            savedInstanceState.remove(FRAGMENTS_TAG);
-        }
-        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         initView();
@@ -40,6 +36,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void initView(){
+        mConstraintLayout = findViewById(R.id.stage);
         mViewPager = findViewById(R.id.viewpager);
         initTabLayout();
     }
@@ -75,6 +72,7 @@ public class MainActivity extends AppCompatActivity{
                 //先将上一次的tab清空
                 subTabLayout.removeAllTabs();
                 mFragmentList.clear();
+                mViewPager = null;
                 initPagerAndTab();
             }
 
@@ -92,9 +90,10 @@ public class MainActivity extends AppCompatActivity{
 
     public void initPagerAndTab(){
         //根据标题的长度来设置tab和pager,并将title传到fragment中
+        mViewPager = findViewById(R.id.viewpager);
         for(int i=0; i<Content.length; i++){
             subTabLayout.addTab(subTabLayout.newTab().setText(Content[i]));
-            mFragmentList.add(new PagerFragment(Content[i]));
+            mFragmentList.add(new PagerFragment(Content[i], mConstraintLayout));
         }
         //将pager和tab绑定起来
         mPagerAdapter = new PagerAdapter(getSupportFragmentManager(),mFragmentList);
@@ -127,7 +126,6 @@ public class MainActivity extends AppCompatActivity{
 
         @Override
         public int getItemPosition(@NonNull Object object) {
-//        return super.getItemPosition(object);
             return PagerAdapter.POSITION_NONE;
         }
 

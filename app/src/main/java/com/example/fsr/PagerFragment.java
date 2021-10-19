@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,7 @@ public class PagerFragment extends Fragment{
     private RecyclerView mRecyclerView;
     private List<Integer> mIntegerList;
     private String title;
+    private ConstraintLayout mConstraintLayout;
 
     int[] blank = new int[]{R.drawable.blank};
     int[] F_houses = new int[] { R.drawable.blank,R.drawable.fangzi1, R.drawable.fangzi2, R.drawable.fangzi3, R.drawable.fangzi4,
@@ -50,6 +52,11 @@ public class PagerFragment extends Fragment{
 
     public PagerFragment(String title){
         this.title = title;
+    }
+
+    public PagerFragment(String title, ConstraintLayout constraintLayout) {
+        this.title = title;
+        mConstraintLayout = constraintLayout;
     }
 
     @Nullable
@@ -102,7 +109,7 @@ public class PagerFragment extends Fragment{
         if (mRecyclerView.getChildCount() > 0) {
             mRecyclerView.setAdapter(null);
         }
-        ImageAdapter imageAdapter = new ImageAdapter(mIntegerList);
+        ImageAdapter imageAdapter = new ImageAdapter(mIntegerList,mConstraintLayout,getContext());
         mRecyclerView.setAdapter(imageAdapter);
     }
 
