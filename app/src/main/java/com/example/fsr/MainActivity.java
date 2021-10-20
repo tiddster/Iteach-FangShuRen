@@ -8,9 +8,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.example.fsr.bean.PictureInfo;
 import com.example.fsr.bean.TabInfo;
 import com.google.android.material.tabs.TabLayout;
 
@@ -18,13 +21,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
-    private ConstraintLayout mConstraintLayout;
+    private FrameLayout mFrameLayout;
     private TabLayout mainTabLayout, subTabLayout;
     private TabInfo tabInfo = new TabInfo();
     private String[] Content = tabInfo.getContentOfFang();
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
     private List<Fragment> mFragmentList = new ArrayList<>();
+    private List<PictureInfo> toBeAddedList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void initView(){
-        mConstraintLayout = findViewById(R.id.stage);
+        mFrameLayout = findViewById(R.id.stage);
         mViewPager = findViewById(R.id.viewpager);
         initTabLayout();
     }
@@ -44,7 +48,10 @@ public class MainActivity extends AppCompatActivity{
     public void initTabLayout(){
         subTabLayout = findViewById(R.id.SubTitleTab);
         mainTabLayout = findViewById(R.id.MainTitleTab);
+        /*
         initPagerAndTab();
+
+         */
     }
 
     public void listener(){
@@ -93,7 +100,7 @@ public class MainActivity extends AppCompatActivity{
         mViewPager = findViewById(R.id.viewpager);
         for(int i=0; i<Content.length; i++){
             subTabLayout.addTab(subTabLayout.newTab().setText(Content[i]));
-            mFragmentList.add(new PagerFragment(Content[i], mConstraintLayout));
+            mFragmentList.add(new PagerFragment(Content[i], mFrameLayout, toBeAddedList));
         }
         //将pager和tab绑定起来
         mPagerAdapter = new PagerAdapter(getSupportFragmentManager(),mFragmentList);

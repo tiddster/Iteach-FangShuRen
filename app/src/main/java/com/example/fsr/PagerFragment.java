@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -13,14 +14,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fsr.bean.PictureInfo;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class PagerFragment extends Fragment{
     private RecyclerView mRecyclerView;
-    private List<Integer> mIntegerList;
+    private List<PictureInfo> mPictureInfoList;
     private String title;
-    private ConstraintLayout mConstraintLayout;
+    private FrameLayout mFrameLayout;
+    private List<PictureInfo> toBeAddedList = new ArrayList<>();
 
     int[] blank = new int[]{R.drawable.blank};
     int[] F_houses = new int[] { R.drawable.blank,R.drawable.fangzi1, R.drawable.fangzi2, R.drawable.fangzi3, R.drawable.fangzi4,
@@ -54,9 +58,10 @@ public class PagerFragment extends Fragment{
         this.title = title;
     }
 
-    public PagerFragment(String title, ConstraintLayout constraintLayout) {
+    public PagerFragment(String title, FrameLayout frameLayout, List<PictureInfo> pictureInfos) {
         this.title = title;
-        mConstraintLayout = constraintLayout;
+        mFrameLayout = frameLayout;
+        toBeAddedList = pictureInfos;
     }
 
     @Nullable
@@ -76,7 +81,7 @@ public class PagerFragment extends Fragment{
     //初始化fragment里面的列表和adapter
     public void initListAndAdapter(String title){
         int[] array = blank;
-        mIntegerList = new ArrayList<>();
+        mPictureInfoList = new ArrayList<>();
         switch (title){
             case "屋顶": array = F_houses; break;
             case "墙": array = F_walls; break;
@@ -105,11 +110,11 @@ public class PagerFragment extends Fragment{
             case "背景": break;
             default: array = blank;
         }
-        for(int id : array) mIntegerList.add(id);
+        for(int id : array) mPictureInfoList.add(new PictureInfo(id,title));
         if (mRecyclerView.getChildCount() > 0) {
             mRecyclerView.setAdapter(null);
         }
-        ImageAdapter imageAdapter = new ImageAdapter(mIntegerList,mConstraintLayout,getContext());
+        ImageAdapter imageAdapter = new ImageAdapter(toBeAddedList, mPictureInfoList,mFrameLayout,getContext());
         mRecyclerView.setAdapter(imageAdapter);
     }
 
