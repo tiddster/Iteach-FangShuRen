@@ -48,10 +48,9 @@ public class MainActivity extends AppCompatActivity{
     public void initTabLayout(){
         subTabLayout = findViewById(R.id.SubTitleTab);
         mainTabLayout = findViewById(R.id.MainTitleTab);
-        /*
+
         initPagerAndTab();
 
-         */
     }
 
     public void listener(){
@@ -129,6 +128,11 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public CharSequence getPageTitle(int position) {
             return Content[position];
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return getItem(position).hashCode();
         }
 
         @Override

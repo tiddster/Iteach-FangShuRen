@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.ColorSpace;
 import android.graphics.Picture;
+import android.graphics.Point;
 import android.graphics.PointF;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -23,6 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder> {
+    private float oldDis = 0;
+    private int situation = 0;
     private List<PictureInfo> mPictureInfoList;
     private List<PictureInfo> toBeAddedList = new ArrayList<>();
     private FrameLayout mFrameLayout;
@@ -67,7 +70,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                         break;
                     }
                 }
-                if(!isAdded) toBeAddedList.add(pictureInfo);
+                if (!isAdded) toBeAddedList.add(pictureInfo);
                 addView(toBeAddedList);
             }
         });
@@ -97,9 +100,20 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
         for (PictureInfo pictureInfo : pictureInfos) {
             //初始化imageview和声明布局
             ImageView imageView = new ImageView(mContext);
-            FrameLayout.LayoutParams params;
+            ImageView enImage = new ImageView(mContext);
+            enImage.setImageResource(R.drawable.en_circle_foreground);
             imageView.setImageResource(pictureInfo.getId());
+
+            FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(pictureInfo.getWidth(), pictureInfo.getHeight());
+            FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(150, 150);
+            params1.setMargins(pictureInfo.getLeft(), pictureInfo.getTop(), pictureInfo.getRight(), pictureInfo.getBottom());
+            params2.leftMargin = params1.leftMargin + params1.width;
+            params2.topMargin = params1.topMargin + params1.height;
+            mFrameLayout.addView(imageView, params1);
+            mFrameLayout.addView(enImage, params2);
+
             //根据标签初始化布局
+            /*
             switch (pictureInfo.getTitle()){
                 case "屋顶": params = new FrameLayout.LayoutParams(1000, 1000); break;
                 case "墙": params = new FrameLayout.LayoutParams(1000, 1200); break;
@@ -121,7 +135,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                 case "饰品": params = new FrameLayout.LayoutParams(150, 150); break;
 
                 //大小调试完成
-                case "树干": params = new FrameLayout.LayoutParams(500, 500); break;
+                case "树干": params = new FrameLayout.LayoutParams(400, 400); break;
                 case "树枝": params = new FrameLayout.LayoutParams(500, 500); break;
                 case "树冠": params = new FrameLayout.LayoutParams(300, 300); break;
                 case "果实": params = new FrameLayout.LayoutParams(250, 250); break;
@@ -132,28 +146,36 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                 default: params = new FrameLayout.LayoutParams(100,100);
             }
 
-            params.setMargins(pictureInfo.getLeft(), pictureInfo.getTop(), pictureInfo.getRight(), pictureInfo.getBottom());
-            System.out.println(pictureInfo.getTop());
-            mFrameLayout.addView(imageView,params);
-
-            imageView.setOnTouchListener(new View.OnTouchListener() {
+             */
+            enImage.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
                     ImageView view = (ImageView) v;
-                    switch (event.getAction()) {
+                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
                         case MotionEvent.ACTION_DOWN:
                             mPointF.set(event.getX(), event.getY());
+                            System.out.println(situation);
                             break;
 
                         case MotionEvent.ACTION_MOVE:
-                            //移动
-                            int dx = (int) (event.getX() - mPointF.x);
-                            int dy = (int) (event.getY() - mPointF.y);
-                            view.layout(view.getLeft() + dx, view.getTop() + dy, view.getRight() + dx, view.getBottom() + dy);
-                            pictureInfo.setLeft(view.getLeft());
-                            pictureInfo.setRight(view.getRight());
-                            pictureInfo.setTop(view.getTop());
-                            pictureInfo.setBottom(view.getBottom());
+                            float percent = imageView.getWidth() / imageView.getHeight();
+
+                            PointF pointF = new PointF(event.getX(), event.getY());
+                            int dx = (int) (pointF.x - mPointF.x) / 2;
+                            int dy = (int) (dx * percent);
+                            //int theDis = (int) ((newDis - oldDis) / 30);
+                            if(params1.height > 50 || params1.width > 50 || dx > 0) {
+                                params1.setMargins(pictureInfo.getLeft(), pictureInfo.getTop(), pictureInfo.getRight(), pictureInfo.getBottom());
+                                params1.height += dx;
+                                params1.width += dy;
+                                pictureInfo.setHeight(params1.height);
+                                pictureInfo.setWidth(params1.width);
+                                imageView.setLayoutParams(params1);
+                                params2.leftMargin += dx;
+                                params2.topMargin += dy;
+                                enImage.setLayoutParams(params2);
+                            }
+
                             break;
 
                         case MotionEvent.ACTION_UP:
@@ -162,6 +184,64 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                     return true;
                 }
             });
+
+            imageView.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    ImageView view = (ImageView) v;
+                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                        case MotionEvent.ACTION_DOWN:
+                            mPointF.set(event.getX(), event.getY());
+                            break;
+/*
+                        case MotionEvent.ACTION_POINTER_DOWN:
+                            oldDis = CalculateDistance(event);
+                            situation = 2;
+                            System.out.println(situation);
+                            break;
+*/
+                        case MotionEvent.ACTION_MOVE:
+
+                            int dx = (int) (event.getX() - mPointF.x) / 2;
+                            int dy = (int) (event.getY() - mPointF.y) / 2;
+                            params1.leftMargin += dx;
+                            params1.topMargin += dy;
+                            imageView.setLayoutParams(params1);
+
+                            pictureInfo.setLeft(view.getLeft());
+                            pictureInfo.setRight(view.getRight());
+                            pictureInfo.setTop(view.getTop());
+                            pictureInfo.setBottom(view.getBottom());
+
+                            params2.leftMargin += dx;
+                            params2.topMargin += dy;
+                            enImage.setLayoutParams(params2);
+                            /*
+                            else if(situation == 2){
+                                float newDis = CalculateDistance(event);
+                                int theDis = (int)((newDis-oldDis)/30);
+                                params1.setMargins(pictureInfo.getLeft(), pictureInfo.getTop(), pictureInfo.getRight(), pictureInfo.getBottom());
+                                params1.height += theDis;
+                                params1.width += theDis;
+                                pictureInfo.setHeight(params1.height);
+                                pictureInfo.setWidth(params1.width);
+                                imageView.setLayoutParams(params1);
+                            }
+
+                             */
+                            break;
+                        case MotionEvent.ACTION_UP:
+                            break;
+                    }
+                    return true;
+                }
+            });
         }
+    }
+
+    public float CalculateDistance(MotionEvent event) {
+        float Dx = event.getX(0) - event.getX(1);
+        float Dy = event.getY(0) - event.getY(1);
+        return (float) Math.sqrt(Dx * Dx + Dy * Dy);
     }
 }

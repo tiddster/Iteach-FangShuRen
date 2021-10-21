@@ -4,12 +4,29 @@ import android.graphics.PointF;
 
 public class PictureInfo {
     private int top = 500, bottom = 500, left = 500, right = 500;
+    private int height = 500, width = 500;
     private int id;
     private String title;
 
     public PictureInfo(int id, String title) {
         this.id = id;
         this.title = title;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
     }
 
     public int getTop() {

@@ -12,33 +12,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#f0f0f0"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/fang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="房"/>
+            android:text="房" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/shu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="树"/>
+            android:text="树" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/ren"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="人"/>
+            android:text="人" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/fujiwu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="附加物"/>
+            android:text="附加物" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/finish"
@@ -50,31 +50,31 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/SubTitleTab"
-        android:background="#f0f0f0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#f0f0f0"
+        app:layout_constraintBottom_toTopOf="@+id/MainTitleTab"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MainTitleTab"
         app:tabMode="scrollable" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/SubTitleTab"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SubTitleTab" >
-    </androidx.viewpager.widget.ViewPager>
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"></androidx.viewpager.widget.ViewPager>
 
     <FrameLayout
         android:id="@+id/stage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/viewpager"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewpager">
+        app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
 
