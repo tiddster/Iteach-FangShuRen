@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder> {
+    private int id = 0;         //用于记录图片的id，以切换伸缩按钮的显示
     private float oldDis = 0;
     private int situation = 0;
     private List<PictureInfo> mPictureInfoList;
@@ -97,20 +98,23 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
     @SuppressLint("ClickableViewAccessibility")
     public void addView(List<PictureInfo> pictureInfos) {
         mFrameLayout.removeAllViews();
+        ImageView enImage = new ImageView(mContext);
+        ImageView cancelImage = new ImageView(mContext);
+        enImage.setImageResource(R.drawable.en_circle_foreground);
+        cancelImage.setImageResource(R.drawable.cancel_foreground);
+
         for (PictureInfo pictureInfo : pictureInfos) {
             //初始化imageview和声明布局
             ImageView imageView = new ImageView(mContext);
-            ImageView enImage = new ImageView(mContext);
-            enImage.setImageResource(R.drawable.en_circle_foreground);
             imageView.setImageResource(pictureInfo.getId());
 
+            //param1是图片的布局  param2是伸缩按钮的布局
             FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(pictureInfo.getWidth(), pictureInfo.getHeight());
             FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(150, 150);
             params1.setMargins(pictureInfo.getLeft(), pictureInfo.getTop(), pictureInfo.getRight(), pictureInfo.getBottom());
             params2.leftMargin = params1.leftMargin + params1.width;
             params2.topMargin = params1.topMargin + params1.height;
             mFrameLayout.addView(imageView, params1);
-            mFrameLayout.addView(enImage, params2);
 
             //根据标签初始化布局
             /*
@@ -147,43 +151,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
             }
 
              */
-            enImage.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    ImageView view = (ImageView) v;
-                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
-                        case MotionEvent.ACTION_DOWN:
-                            mPointF.set(event.getX(), event.getY());
-                            System.out.println(situation);
-                            break;
-
-                        case MotionEvent.ACTION_MOVE:
-                            float percent = imageView.getWidth() / imageView.getHeight();
-
-                            PointF pointF = new PointF(event.getX(), event.getY());
-                            int dx = (int) (pointF.x - mPointF.x) / 2;
-                            int dy = (int) (dx * percent);
-                            //int theDis = (int) ((newDis - oldDis) / 30);
-                            if(params1.height > 50 || params1.width > 50 || dx > 0) {
-                                params1.setMargins(pictureInfo.getLeft(), pictureInfo.getTop(), pictureInfo.getRight(), pictureInfo.getBottom());
-                                params1.height += dx;
-                                params1.width += dy;
-                                pictureInfo.setHeight(params1.height);
-                                pictureInfo.setWidth(params1.width);
-                                imageView.setLayoutParams(params1);
-                                params2.leftMargin += dx;
-                                params2.topMargin += dy;
-                                enImage.setLayoutParams(params2);
-                            }
-
-                            break;
-
-                        case MotionEvent.ACTION_UP:
-                            break;
-                    }
-                    return true;
-                }
-            });
 
             imageView.setOnTouchListener(new View.OnTouchListener() {
                 @Override
@@ -192,6 +159,49 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                     switch (event.getAction() & MotionEvent.ACTION_MASK) {
                         case MotionEvent.ACTION_DOWN:
                             mPointF.set(event.getX(), event.getY());
+                            if(id != imageView.getId()){
+                                mFrameLayout.removeView(enImage);
+                                mFrameLayout.addView(enImage, params2);
+                                //伸缩按钮的点击事件
+                                enImage.setOnTouchListener(new View.OnTouchListener() {
+                                    @Override
+                                    public boolean onTouch(View v, MotionEvent event) {
+                                        ImageView view = (ImageView) v;
+                                        switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                                            case MotionEvent.ACTION_DOWN:
+                                                mPointF.set(event.getX(), event.getY());
+                                                System.out.println(situation);
+                                                break;
+
+                                            case MotionEvent.ACTION_MOVE:
+                                                float percent = imageView.getWidth() / imageView.getHeight();
+
+                                                PointF pointF = new PointF(event.getX(), event.getY());
+                                                int dx = (int) (pointF.x - mPointF.x) / 2;
+                                                int dy = (int) (dx * percent);
+                                                //int theDis = (int) ((newDis - oldDis) / 30);
+                                                if(params1.height > 50 || params1.width > 50 || dx > 0) {
+                                                    params1.setMargins(pictureInfo.getLeft(), pictureInfo.getTop(), pictureInfo.getRight(), pictureInfo.getBottom());
+                                                    params1.height += dx;
+                                                    params1.width += dy;
+                                                    pictureInfo.setHeight(params1.height);
+                                                    pictureInfo.setWidth(params1.width);
+                                                    imageView.setLayoutParams(params1);
+                                                    params2.leftMargin += dx;
+                                                    params2.topMargin += dy;
+                                                    enImage.setLayoutParams(params2);
+                                                }
+
+                                                break;
+
+                                            case MotionEvent.ACTION_UP:
+                                                break;
+                                        }
+                                        return true;
+                                    }
+                                });
+                                id = imageView.getId();
+                            }
                             break;
 /*
                         case MotionEvent.ACTION_POINTER_DOWN:
@@ -237,11 +247,5 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                 }
             });
         }
-    }
-
-    public float CalculateDistance(MotionEvent event) {
-        float Dx = event.getX(0) - event.getX(1);
-        float Dy = event.getY(0) - event.getY(1);
-        return (float) Math.sqrt(Dx * Dx + Dy * Dy);
     }
 }
