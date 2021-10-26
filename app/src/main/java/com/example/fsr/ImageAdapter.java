@@ -7,6 +7,8 @@ import android.graphics.ColorSpace;
 import android.graphics.Picture;
 import android.graphics.Point;
 import android.graphics.PointF;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,14 +26,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder> {
+    private long lastClickTime;
     private int id = 0;         //用于记录图片的id，以切换伸缩按钮的显示
     private float oldDis = 0;
     private int situation = 0;
-    private List<PictureInfo> mPictureInfoList;
-    private List<PictureInfo> toBeAddedList = new ArrayList<>();
+    private List<PictureInfo> mPictureInfoList;                 //viewpager里面的图片信息
+    private List<PictureInfo> toBeAddedList = new ArrayList<>();    //画布上图片信息
     private FrameLayout mFrameLayout;
     private Context mContext;
-    private PointF mPointF = new PointF();
+    private PointF mPointF = new PointF();                  //触摸的点，用于移动图像
 
     public ImageAdapter(List<PictureInfo> toBeAddedList, List<PictureInfo> pictureInfoList, FrameLayout frameLayout, Context context) {
         this.toBeAddedList = toBeAddedList;
@@ -58,7 +61,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
         holder.mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*
                 boolean isAdded = false;
+
                 for (PictureInfo toBeReplaced : toBeAddedList) {
                     if (pictureInfo.getTitle().equals(toBeReplaced.getTitle())) {
                         pictureInfo.setTop(toBeReplaced.getTop());
@@ -71,7 +76,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                         break;
                     }
                 }
-                if (!isAdded) toBeAddedList.add(pictureInfo);
+
+                if (!isAdded)
+
+                 */
+                toBeAddedList.add(pictureInfo);
                 addView(toBeAddedList);
             }
         });
@@ -98,10 +107,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
     @SuppressLint("ClickableViewAccessibility")
     public void addView(List<PictureInfo> pictureInfos) {
         mFrameLayout.removeAllViews();
+        //所有image共用一个拉伸按钮
         ImageView enImage = new ImageView(mContext);
-        ImageView cancelImage = new ImageView(mContext);
         enImage.setImageResource(R.drawable.en_circle_foreground);
-        cancelImage.setImageResource(R.drawable.cancel_foreground);
 
         for (PictureInfo pictureInfo : pictureInfos) {
             //初始化imageview和声明布局
@@ -157,11 +165,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                 public boolean onTouch(View v, MotionEvent event) {
                     ImageView view = (ImageView) v;
                     switch (event.getAction() & MotionEvent.ACTION_MASK) {
+
                         case MotionEvent.ACTION_DOWN:
                             mPointF.set(event.getX(), event.getY());
                             if(id != imageView.getId()){
                                 mFrameLayout.removeView(enImage);
                                 mFrameLayout.addView(enImage, params2);
+
                                 //伸缩按钮的点击事件
                                 enImage.setOnTouchListener(new View.OnTouchListener() {
                                     @Override
@@ -171,6 +181,15 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                                             case MotionEvent.ACTION_DOWN:
                                                 mPointF.set(event.getX(), event.getY());
                                                 System.out.println(situation);
+                                                long currentTimeMillis = SystemClock.uptimeMillis();
+                                                //两次点击间隔时间小于300ms代表双击
+                                                if (currentTimeMillis - lastClickTime < 300) {
+                                                    mFrameLayout.removeView(imageView);
+                                                    mFrameLayout.removeView(enImage);
+                                                    toBeAddedList.remove(pictureInfo);
+                                                }
+                                                lastClickTime = currentTimeMillis;
+
                                                 break;
 
                                             case MotionEvent.ACTION_MOVE:
@@ -200,7 +219,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                                         return true;
                                     }
                                 });
-                                id = imageView.getId();
                             }
                             break;
 /*
