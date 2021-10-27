@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -16,9 +17,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.fsr.bean.PictureInfo;
+import com.example.fsr.bean.ResInfo;
 import com.example.fsr.bean.TabInfo;
 import com.google.android.material.tabs.TabLayout;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,7 +88,13 @@ public class MainActivity extends AppCompatActivity{
                         Content = new String[]{"附加物"};
                         break;
                     case 4:
-                        finish();
+                        ResInfo resInfo = new ResInfo(toBeAddedList);
+                        Intent intent = new Intent(MainActivity.this,FinishActivity.class);
+
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("result", (Serializable) resInfo);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
                 }
                 //先将上一次的tab清空
                 subTabLayout.removeAllTabs();

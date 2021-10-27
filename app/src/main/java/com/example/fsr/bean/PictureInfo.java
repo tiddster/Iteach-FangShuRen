@@ -2,7 +2,9 @@ package com.example.fsr.bean;
 
 import android.graphics.PointF;
 
-public class PictureInfo {
+import java.io.Serializable;
+
+public class PictureInfo implements Serializable {
     private int top = 500, bottom = 500, left = 500, right = 500;
     private int height = 500, width = 500;
     private int id;
