@@ -82,6 +82,7 @@
     <string name="果实小而多">有较多的欲望和目标，没有确定什么是真正的最重要的需求，没有足够的信心实现自己的目标</string>
     <string name="果实小而少">对自己的评价不高，不相信自己能够取得大的成绩</string>
     <string name="果实青涩">代表处于有所作为的初期青涩的果实虽然有了一定的成绩，但仍需要继续努力，还不到享受和收获的时间</string>
+    <string name="果实掉落">感到自己被拒绝，垂头丧气，由于某种原因脱离了原先的环境，而这些体验往往是非常不愉快的体验。</string>
     
     //纹路
     <string name="树疤痕">受创伤的标志、提示心理创伤的体验和不安，曾经有非常难过的时间</string>
@@ -151,6 +152,8 @@
     <string name="强调涂鸦线条">焦虑</string>
     <string name="右侧阴影">社交性好、适应性强</string>
     <string name="左侧阴影">内向、压抑自己，很难表露自己</string>
+    <string name="直接有树干到单线树枝">智能与性格都有轻度迟滞、最近有重大外伤体验</string>
+    <string name="枯树">自卑、自贬、抑郁</string>
 
     //发型
     <string name="头大">对自己智慧等评价较高;不满意自己体格;自负;求知欲强，易空想</string>
@@ -166,6 +169,7 @@
     <string name="光头">狡猾，自我防御强</string>
     <string name="一个辫子向上">内心力量强</string>
     <string name="三毛式">退缩的倾向，人际关系的畏缩以及自我防卫</string>
+    <string name="卷发">易于被外界影响</string>
     <string name="五官模糊">退缩的倾向，人际关系的畏缩以及自我防卫</string>
     <string name="过分强调五官">用攻击性来弥补自己的匮乏感和软弱</string>
     <string name="注重脸部">在乎面子</string>
@@ -193,6 +197,8 @@
     <string name="脸部有阴影">代表情绪障碍、自我评价低</string>
     <string name="符号化的人">受测者有掩饰性，不愿表露自我</string>
     <string name="西服">超我表现、追求文化品位、有强迫倾向</string>
+    <string name="水手">勇敢，向往远方</string>
+    <string name="领带">渴望成长</string>
 
     <string name="只出现半身">自我意思比较模糊、还在自我整合的过程中</string>
     
@@ -221,7 +227,7 @@
     <string name="云朵">表示对生活的关心，也有表示焦虑，缠绕在头脑中引起的焦虑事件，代表忧郁</string>
     <string name="乌云">灾害，创伤，多愁善感，攻击性；易与权威人士抗衡，不满</string>
     <string name="矮木和花">可能暗示着某些人</string>
-    <string name="山">表示迫求保护，安全。圆形山峰，恋母情结；尖锐山峰，努力奋斗和攻击性</string>
+    <string name="山">表示迫求保护，安全。圆形山峰；尖锐山峰，努力奋斗和攻击性</string>
     <string name="暗淡的太阳">目前状态较为忧愁</string>
     <string name="四分之一的太阳">能量弱，动力不足</string>
     <string name="远景大太阳">仿佛有人支撑，动力足</string>
@@ -234,6 +240,7 @@
     <string name="啄木鸟">内心可能有无法抹去的秘密或者阴影</string>
     <string name="鱼">内心向往自由</string>
     <string name="章鱼或水母">懒散</string>
+    <string name="彩虹">此时内心愉悦</string>
     
     //路
     <string name="路是弯曲的">间接性交往，自我保护，人际交往圆滑</string>
