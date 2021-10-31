@@ -8,12 +8,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.fsr.bean.PictureInfo;
@@ -25,7 +23,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity{
+public class StageActivity extends AppCompatActivity{
     private TextView tips,ok;
     private FrameLayout mFrameLayout;                                  //布局对象，要传入到imageadapter中用作addview
     private ConstraintLayout mConstraintLayout;
@@ -89,11 +87,13 @@ public class MainActivity extends AppCompatActivity{
                         break;
                     case 4:
                         ResInfo resInfo = new ResInfo(toBeAddedList);
-                        Intent intent = new Intent(MainActivity.this,FinishActivity.class);
+                        Intent intent = new Intent(StageActivity.this,FinishActivity.class);
 
                         Bundle bundle = new Bundle();
                         bundle.putSerializable("result", (Serializable) resInfo);
+                        bundle.putSerializable("list", (Serializable) toBeAddedList);
                         intent.putExtras(bundle);
+                        finish();
                         startActivity(intent);
                 }
                 //先将上一次的tab清空

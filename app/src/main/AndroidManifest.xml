@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FSR">
         <activity android:name=".FinishActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".StageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

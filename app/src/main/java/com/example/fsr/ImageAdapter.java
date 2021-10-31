@@ -109,8 +109,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
         mFrameLayout.removeAllViews();
         //所有image共用一个拉伸按钮
         ImageView enImage = new ImageView(mContext);
+        ImageView deleteImage = new ImageView(mContext);
         enImage.setImageResource(R.drawable.en_circle_foreground);
-
+        deleteImage.setImageResource(R.drawable.cancel_foreground);
         for (PictureInfo pictureInfo : pictureInfos) {
             //初始化imageview和声明布局
             ImageView imageView = new ImageView(mContext);
@@ -119,9 +120,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
             //param1是图片的布局  param2是伸缩按钮的布局
             FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(pictureInfo.getWidth(), pictureInfo.getHeight());
             FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(150, 150);
+            FrameLayout.LayoutParams params3 = new FrameLayout.LayoutParams(150, 150);
             params1.setMargins(pictureInfo.getLeft(), pictureInfo.getTop(), pictureInfo.getRight(), pictureInfo.getBottom());
-            params2.leftMargin = params1.leftMargin + params1.width;
-            params2.topMargin = params1.topMargin + params1.height;
+            params2.leftMargin = params1.leftMargin + params1.width - 30;
+            params2.topMargin = params1.topMargin + params1.height - 30;
+            params3.leftMargin = params1.leftMargin - 100;
+            params3.topMargin = params1.topMargin - 100;
             mFrameLayout.addView(imageView, params1);
 
             //根据标签初始化布局
@@ -171,6 +175,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                             if(id != imageView.getId()){
                                 mFrameLayout.removeView(enImage);
                                 mFrameLayout.addView(enImage, params2);
+                                mFrameLayout.removeView(deleteImage);
+                                mFrameLayout.addView(deleteImage,params3);
 
                                 //伸缩按钮的点击事件
                                 enImage.setOnTouchListener(new View.OnTouchListener() {
@@ -186,6 +192,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                                                 if (currentTimeMillis - lastClickTime < 300) {
                                                     mFrameLayout.removeView(imageView);
                                                     mFrameLayout.removeView(enImage);
+                                                    mFrameLayout.removeView(deleteImage);
                                                     toBeAddedList.remove(pictureInfo);
                                                 }
                                                 lastClickTime = currentTimeMillis;
@@ -219,6 +226,21 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                                         return true;
                                     }
                                 });
+                                //------------------------------------------
+                                deleteImage.setOnTouchListener(new View.OnTouchListener() {
+                                    @Override
+                                    public boolean onTouch(View v, MotionEvent event) {
+                                        switch (event.getAction() & MotionEvent.ACTION_MASK){
+                                            case MotionEvent.ACTION_DOWN:
+                                                mFrameLayout.removeView(imageView);
+                                                mFrameLayout.removeView(enImage);
+                                                mFrameLayout.removeView(deleteImage);
+                                                toBeAddedList.remove(pictureInfo);
+                                        }
+                                        return true;
+                                    }
+                                });
+
                             }
                             break;
 /*
@@ -244,6 +266,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageHolder>
                             params2.leftMargin += dx;
                             params2.topMargin += dy;
                             enImage.setLayoutParams(params2);
+                            params3.leftMargin += dx;
+                            params3.topMargin += dy;
+                            deleteImage.setLayoutParams(params3);
                             /*
                             else if(situation == 2){
                                 float newDis = CalculateDistance(event);

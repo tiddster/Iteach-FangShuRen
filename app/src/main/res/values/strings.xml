@@ -1,261 +1,261 @@
 <resources>
     //房子
     <string name="app_name">FSR</string>
-    <string name="童话房子">幻想型，童真、幼稚化</string>
-    <string name="圆形房子">在生活中被保护</string>
-    <string name="现代化房子">现实型，智商较高</string>
-    <string name="传统房子">自我意识强</string>
-    <string name="亭台楼榭">追求高层次文化，修养，品位，开放</string>
-    <string name="庙宇型">易走极端</string>
-    <string name="四合院型">平和、保守，略带自闭</string>
-    <string name="房子偏向纸的一边">没有安全感</string>
-    <string name="房子在树上">自我保护；表示想在险恶的环境中寻找</string>
-    <string name="塔">反映本我</string>
+    <string name="童话房子">• 幻想型，童真、幼稚化</string>
+    <string name="圆形房子">• 渴望在生活中被保护</string>
+    <string name="现代化房子">• 现实型，智商较高</string>
+    <string name="传统房子">• 自我意识强</string>
+    <string name="亭台楼榭">• 追求高层次文化，修养，品位，开放</string>
+    <string name="庙宇型">• 易走极端</string>
+    <string name="四合院型">• 平和、保守，略带自闭</string>
+    <string name="房子偏向纸的一边">• 没有安全感</string>
+    <string name="房子在树上">• 自我保护；表示想在险恶的环境中寻找</string>
+    <string name="塔">• 反映本我，内心渴望创造</string>
     
     //房顶
-    <string name="大屋顶">幻想力强，想象力丰富；好空想，逃避现实生活及人际关系</string>
-    <string name="瓦片">表示缺乏安全感，担心；</string>
-    <string name="鱼鳞">考虑问题很仔细，敏感，保护自己</string>
-    <string name="黑屋顶">内心有沉重感、负重感</string>
-    <string name="十字屋顶">内心有激烈的矛盾和冲突</string>
-    <string name="网状屋顶">内疚感、想要控制住自己的幻想</string>
-    <string name="阁楼屋顶">有秘密或野心</string>
-    <string name="天窗屋顶">理想化，有抱负</string>
-    <string name="屋顶线条加浓">特立独行</string>
-    <string name="屋顶线条较细">对家庭的结构及概念不清晰</string>
+    <string name="大屋顶">• 幻想力强，想象力丰富；好空想，逃避现实生活及人际关系</string>
+    <string name="瓦片">• 表示缺乏安全感，担心；</string>
+    <string name="鱼鳞">• 考虑问题很仔细，敏感，保护自己</string>
+    <string name="黑屋顶">• 内心有沉重感、负重感</string>
+    <string name="十字屋顶">• 内心有激烈的矛盾和冲突</string>
+    <string name="网状屋顶">• 内疚感、想要控制住自己的幻想</string>
+    <string name="阁楼屋顶">• 有秘密或野心</string>
+    <string name="天窗屋顶">• 理想化，有抱负</string>
+    <string name="屋顶线条加浓">• 特立独行,有自己的想法</string>
+    <string name="屋顶线条较细">• 对家庭的结构及概念不清晰</string>
 
     //墙壁
-    <string name="普通墙壁">自我保护的象征，表示一种自我的坚强性，抵抗和防御外界攻击的能力，保护自我的能力</string>
-    <string name="坚固的墙壁">强健的自我</string>
-    <string name="一推即倒的墙壁">脆弱的自我</string>
-    <string name="即将崩裂的墙壁">可能存在人格的分裂</string>
-    <string name="墙壁直立与垮掉">家庭中出现了问题或家庭在心中的概念不完整</string>
-    <string name="细笔画的墙">虚弱的自我、易受伤害的自我</string>
-    <string name="有墙纸的墙壁">缺乏安全感</string>
-    <string name="墙壁透明">不能充分理解现实,精神发育迟滞,自我与外界界限不清或者在现实中较为粗枝大叶 </string>
-    <string name="岩块剥落的墙">不完整的个体特性</string>
-    <string name="围墙">与现实接触过少，易自我崩溃</string>
-    <string name="单墙">性格内向，敏感多疑</string>
-    <string name="墙的线条加浓">在人际关系中过度防御</string>
-    <string name="墙壁轮廓及线条清楚">家庭概念清晰</string>
+    <string name="普通墙壁">• 自我保护的象征，表示一种自我的坚强性，抵抗和防御外界攻击的能力，保护自我的能力</string>
+    <string name="坚固的墙壁">• 强健的自我</string>
+    <string name="一推即倒的墙壁">• 脆弱的自我</string>
+    <string name="即将崩裂的墙壁">• 可能存在人格的分裂</string>
+    <string name="墙壁直立与垮掉">• 家庭中出现了问题或家庭在心中的概念不完整</string>
+    <string name="细笔画的墙">• 虚弱的自我、易受伤害的自我</string>
+    <string name="有墙纸的墙壁">• 缺乏安全感</string>
+    <string name="墙壁透明">• 不能充分理解现实,精神发育迟滞,自我与外界界限不清或者在现实中较为粗枝大叶 </string>
+    <string name="岩块剥落的墙">• 不完整的个体特性</string>
+    <string name="围墙">• 与现实接触过少，易自我崩溃</string>
+    <string name="单墙">• 性格内向，敏感多疑</string>
+    <string name="墙的线条加浓">• 在人际关系中过度防御</string>
+    <string name="墙壁轮廓及线条清楚">• 家庭概念清晰</string>
     
     //窗户
-    <string name="圆形的窗户">女性化气质、温和</string>
-    <string name="有窗帘的窗子">注重家庭的美丽，有保留地让人接近,同时也害怕别人窥视自己的内心状态</string>
-    <string name="像栅栏一样的窗户">缺乏安全感，对家庭的感受不良</string>
+    <string name="圆形的窗户">• 女性化气质、温和</string>
+    <string name="有窗帘的窗子">• 注重家庭的美丽，有保留地让人接近,同时也害怕别人窥视自己的内心状态</string>
+    <string name="像栅栏一样的窗户">• 缺乏安全感，对家庭的感受不良</string>
     <string name="单片窗户"></string>
-    <string name="装饰性窗户">追求美，自恋，部分有视觉恐惧症，好幻想</string>
-    <string name="染色玻璃窗户">追求美感，觉得自己有瑕疵、罪恶感</string>
-    <string name="阴影窗">对人际关系有适当的关心，与环境协调</string>
-    <string name="窗形不一有方有圆">现实生活与空想生活明显不一</string>
-    <string name="百叶">一种保留的态度；关上的百叶窗表示退缩或情绪忧郁</string>
-    <string name="星星形的窗户">女性化气质</string>
-    <string name="窗户铁栏杆">敏感多疑，缺乏安全感；铁栏杆和门紧闭表示有被害妄想</string>
-    <string name="拉上窗帘的">敏感多疑，内向不安，过度自控。窗帘画得越美的，防御程度越高</string>
-    <string name="拉开窗帘的">虽有不安感，但能适当控制自己，应付自如</string>
-    <string name="格子过多">明显强迫倾向</string>
+    <string name="装饰性窗户">• 追求美，自恋，部分有视觉恐惧症，好幻想</string>
+    <string name="染色玻璃窗户">• 追求极致美感，觉得自己有瑕疵、罪恶感</string>
+    <string name="阴影窗">• 对人际关系有适当的关心，与环境协调</string>
+    <string name="窗形不一有方有圆">• 现实生活与空想生活明显不一</string>
+    <string name="百叶">• 一种保留的态度；关上的百叶窗表示退缩或情绪忧郁</string>
+    <string name="星星形的窗户">• 女性化气质</string>
+    <string name="窗户铁栏杆">• 敏感多疑，缺乏安全感；铁栏杆和门紧闭表示有被害妄想</string>
+    <string name="拉上窗帘的">• 敏感多疑，内向不安，过度自控。窗帘画得越美的，防御程度越高</string>
+    <string name="拉开窗帘的">• 虽有不安感，但能适当控制自己，应付自如</string>
+    <string name="格子过多">• 明显强迫倾向</string>
     
     //门
-    <string name="双扇门">渴望拥有伴侣；成双成对</string>
-    <string name="没有门把手">不欢迎别人走进自己的内心；强调个人的隐私</string>
-    <string name="开门">接受他人热情的欲求，给人留下社交印象的欲求</string>
-    <string name="门半开">往外开合理化攻击；往里开被动攻击，经常留后手，是笑面虎</string>
-    <string name="门被物挡住">逃避倾向，谨慎，表面上很被动</string>
-    <string name="上锁门">警戒性，多疑，自我防卫</string>
-    <string name="高门槛">以自己的方式与别人交往，令人难以接触</string>
-    <string name="有窥视孔的门">不轻易信任他人，谨慎小心，多疑</string>
-    <string name="x门">内心存在冲突,不希望有人进入自己的内心或空间，对问题矛盾而困惑</string>
-    <string name="阴户状的门">对性别的认同，对性的向往，  享乐主义</string>
+    <string name="双扇门">• 渴望拥有伴侣；成双成对</string>
+    <string name="没有门把手">• 不欢迎别人走进自己的内心；强调个人的隐私</string>
+    <string name="开门">• 接受他人热情的欲求，给人留下社交印象的欲求</string>
+    <string name="门半开">• 往外开合理化攻击；往里开被动攻击，经常留后手，是笑面虎</string>
+    <string name="门被物挡住">• 逃避倾向，谨慎，表面上很被动</string>
+    <string name="上锁门">• 警戒性，多疑，自我防卫</string>
+    <string name="高门槛">• 以自己的方式与别人交往，令人难以接触</string>
+    <string name="有窥视孔的门">• 不轻易信任他人，谨慎小心，多疑</string>
+    <string name="x门">• 内心存在冲突,不希望有人进入自己的内心或空间，对问题矛盾而困惑</string>
+    <string name="阴户状的门">• 对性别的认同，对性的向往，  享乐主义</string>
 
     //树的交互
-    <string name="缺少门">对外界有较强的防御心理；拒绝他人与自己接近；冷淡、退缩、有被隔离感；与家庭成员缺乏精神交流，情感淡薄</string>
-    <string name="非常大的门">过度依赖别人、社交上需要他人留下深刻印象；积极与外界接触，追求被人理解，开朗，依赖</string>
-    <string name="门顶天立地">愚蠢或者正常人形成的功能障碍</string>
-    <string name="低矮的门">表面上似乎很开放，内心却不希望别人进入</string>
-    <string name="非常小的门">不欢迎他人走进自己的内心，没有与他人沟通的强烈意愿；害羞、不爱交际，避免社交，无力感</string>
-    <string name="画出旁门">逃避心态，想要逃离家庭，走后门，缺乏安全感</string>
-    <string name="悬门">下面不沾地，门槛过高，表示自傲，家庭多高官，富裕，交往要求别人主动，自我；超价观念，自我夸大</string>
+    <string name="缺少门">• 对外界有较强的防御心理；拒绝他人与自己接近；冷淡、退缩、有被隔离感；与家庭成员缺乏精神交流，情感淡薄</string>
+    <string name="非常大的门">• 过度依赖别人、社交上需要他人留下深刻印象；积极与外界接触，追求被人理解，开朗，依赖</string>
+    <string name="门顶天立地">• 愚蠢或者正常人形成的功能障碍</string>
+    <string name="低矮的门">• 表面上似乎很开放，内心却不希望别人进入</string>
+    <string name="非常小的门">• 不欢迎他人走进自己的内心，没有与他人沟通的强烈意愿；害羞、不爱交际，避免社交，无力感</string>
+    <string name="画出旁门">• 逃避心态，想要逃离家庭，走后门，缺乏安全感</string>
+    <string name="悬门">• 下面不沾地，门槛过高，表示自傲，家庭多高官，富裕，交往要求别人主动，自我；超价观念，自我夸大</string>
 
     //果实
-    <string name="果实大而多">有较多的欲望和目标，有信心实现自己的目标，往往因追求过多而无法很好地分配自己的时间和精力，还没有确定什么是自己真正的、最重要的需求</string>
-    <string name="果实大而少">有明确的目标，把自己的精力集中在有限的几个目标上；知道什么对自己最重要； 有信心实现自己的目标</string>
-    <string name="果实小而多">有较多的欲望和目标，没有确定什么是真正的最重要的需求，没有足够的信心实现自己的目标</string>
-    <string name="果实小而少">对自己的评价不高，不相信自己能够取得大的成绩</string>
-    <string name="果实青涩">代表处于有所作为的初期青涩的果实虽然有了一定的成绩，但仍需要继续努力，还不到享受和收获的时间</string>
-    <string name="果实掉落">感到自己被拒绝，垂头丧气，由于某种原因脱离了原先的环境，而这些体验往往是非常不愉快的体验。</string>
+    <string name="果实大而多">• 有较多的欲望和目标，有信心实现自己的目标，往往因追求过多而无法很好地分配自己的时间和精力，还没有确定什么是自己真正的、最重要的需求</string>
+    <string name="果实大而少">• 有明确的目标，把自己的精力集中在有限的几个目标上；知道什么对自己最重要； 有信心实现自己的目标</string>
+    <string name="果实小而多">• 有较多的欲望和目标，没有确定什么是真正的最重要的需求，没有足够的信心实现自己的目标</string>
+    <string name="果实小而少">• 对自己的评价不高，不相信自己能够取得大的成绩</string>
+    <string name="果实青涩">• 代表处于有所作为的初期青涩的果实虽然有了一定的成绩，但仍需要继续努力，还不到享受和收获的时间</string>
+    <string name="果实掉落">• 感到自己被拒绝，垂头丧气，由于某种原因脱离了原先的环境，而这些体验往往是非常不愉快的体验。</string>
     
     //纹路
-    <string name="树疤痕">受创伤的标志、提示心理创伤的体验和不安，曾经有非常难过的时间</string>
-    <string name="折断痕迹">表成长过程中遇到的挫折与阻碍；受到心理创伤的感情，无力感、被动感 </string>
-    <string name="树洞">曾有心理创伤、不安、冲突</string>
+    <string name="树疤痕">• 受创伤的标志、提示心理创伤的体验和不安，曾经有非常难过的时间</string>
+    <string name="折断痕迹">• 表成长过程中遇到的挫折与阻碍；受到心理创伤的感情，无力感、被动感 </string>
+    <string name="树洞">• 曾有心理创伤、不安、冲突</string>
 
     //树干
-    <string name="树干被风吹弯">承受生活压力和紧张</string>
-    <string name="树干粗大">旺盛的生命力，活动积极，有攻击倾向</string>
-    <string name="树干顶部扩展">随着年龄的增长，活力越足，兴趣越增加</string>
-    <string name="树干顶部收于一点">以目标为导向，实现目标是生活的全部意义，实现目标后并没有发现自己想要的，处于情绪低落状</string>
-    <string name="树干黑色">攻击性强</string>
-    <string name="树根枯死">对早期生命和成长阶段的感受是沮丧的、感情上干涸丧失活力，无冲动力，不能把握现实</string>
-    <string name="树干平行线">通融性差，性格生硬，抽象力强</string>
-    <string name="树干瓶型">擅长形象思维，讲求实际，苦干，勤奋、努力</string>
-    <string name="树根向右膨胀">在人际关系中较难信任他人，与父性的特殊联系</string>
-    <string name="树根向左膨胀">代表某种情感压抑，与母性的特殊联系</string>
-    <string name="树根向左右膨胀">可能会在学习、理解力方面遇到困难</string>
-    <string name="树干细">适应能力差，生活较不稳定</string>
-    <string name="树干鹰爪">攻击性强，想掌握人或物</string>
-    <string name="树干整体弯曲">情绪快乐、任性、自我为中心</string>
-    <string name="树干左曲右直">有心理创伤体验，抑制内在虚弱，有压抑感、防御机制较强</string>
-    <string name="树干左直右曲">适应困难，易于环境产生矛盾;有创造性，但遇到挫折易逃避</string>
-    <string name="破烂的树皮">成长中曾遭受艰辛</string>
-    <string name="反复描画的树皮">焦虑，有强迫症倾向</string>
+    <string name="树干被风吹弯">• 承受生活压力和紧张</string>
+    <string name="树干粗大">• 旺盛的生命力，活动积极，有攻击倾向</string>
+    <string name="树干顶部扩展">• 随着年龄的增长，活力越足，兴趣越增加</string>
+    <string name="树干顶部收于一点">• 以目标为导向，实现目标是生活的全部意义，实现目标后并没有发现自己想要的，处于情绪低落状</string>
+    <string name="树干黑色">• 攻击性强</string>
+    <string name="树根枯死">• 对早期生命和成长阶段的感受是沮丧的、感情上干涸丧失活力，无冲动力，不能把握现实</string>
+    <string name="树干平行线">• 通融性差，性格生硬，抽象力强</string>
+    <string name="树干瓶型">• 擅长形象思维，讲求实际，苦干，勤奋、努力</string>
+    <string name="树根向右膨胀">• 在人际关系中较难信任他人，与父性的特殊联系</string>
+    <string name="树根向左膨胀">• 代表某种情感压抑，与母性的特殊联系</string>
+    <string name="树根向左右膨胀">• 可能会在学习、理解力方面遇到困难</string>
+    <string name="树干细">• 适应能力差，生活较不稳定</string>
+    <string name="树干鹰爪">• 攻击性强，想掌握人或物</string>
+    <string name="树干整体弯曲">• 情绪快乐、任性、自我为中心</string>
+    <string name="树干左曲右直">• 有心理创伤体验，抑制内在虚弱，有压抑感、防御机制较强</string>
+    <string name="树干左直右曲">• 适应困难，易于环境产生矛盾;有创造性，但遇到挫折易逃避</string>
+    <string name="破烂的树皮">• 成长中曾遭受艰辛</string>
+    <string name="反复描画的树皮">• 焦虑，有强迫症倾向</string>
 
     //树冠
-    <string name="树冠巨大">有强烈的成就动机、有雄心壮志、有自豪感、有时自我赞美</string>
-    <string name="树冠小型">有发展障碍的可能</string>
-    <string name="树冠杨柳下垂">关注过去、能力都流往过去；恋旧；易受别人影响，不活泼，无精力，无抵抗力，易疲劳</string>
-    <string name="树冠圆形">双重性格、心情开朗、好社交、有时郁抑</string>
+    <string name="树冠巨大">• 有强烈的成就动机、有雄心壮志、有自豪感、有时自我赞美</string>
+    <string name="树冠小型">• 有发展障碍的可能</string>
+    <string name="树冠杨柳下垂">• 关注过去、能力都流往过去；恋旧；易受别人影响，不活泼，无精力，无抵抗力，易疲劳</string>
+    <string name="树冠圆形">• 双重性格、心情开朗、好社交、有时郁抑</string>
 
     //树叶
-    <string name="树叶大叶型">有依赖感、不愿意独立，容易相处</string>
-    <string name="树叶单独生长型">追求完美的倾向</string>
-    <string name="树叶掉落">由于外界压力而失去自我控制，感受性强</string>
-    <string name="树叶浓密型">代表生命力旺盛、有活力、能量低</string>
-    <string name="树叶手掌型">愿与人接触，有同情心，有热情性</string>
-    <string name="树叶稀少型">生命力不足、活力不够、能量低</string>
-    <string name="树叶针叶型">个性尖锐、不易相处</string>
+    <string name="树叶大叶型">• 有依赖感、不愿意独立，容易相处</string>
+    <string name="树叶单独生长型">• 追求完美的倾向</string>
+    <string name="树叶掉落">• 由于外界压力而失去自我控制，感受性强</string>
+    <string name="树叶浓密型">• 代表生命力旺盛、有活力、能量低</string>
+    <string name="树叶手掌型">• 愿与人接触，有同情心，有热情性</string>
+    <string name="树叶稀少型">• 生命力不足、活力不够、能量低</string>
+    <string name="树叶针叶型">• 个性尖锐、不易相处</string>
 
     //树枝
-    <string name="树枝1">现实生活与空想均能满足，在环境中适应的工作、愉快地生活、愿意滋养、养护他人，愿主动与人交往</string>
-    <string name="树枝2">表示追求环境的满足、与他人交际的适应性、象征实现目标的力量、能力</string>
-    <string name="树枝3">不能进行良好交际，有抵抗感</string>
-    <string name="树枝粗大">匮乏感、无力感</string>
-    <string name="树枝横上生长">具有敌意、冲动与攻击性</string>
-    <string name="树枝路径">有明确的计划性；做事有毅力，有始有终</string>
-    <string name="树枝细致绘画">感受性丰富、对外界刺激能做出良好反映</string>
-    <string name="树枝小">无法从环境中得到满足</string>
-    <string name="树枝折断">成长过程中遇到的挫折与阻碍；受到心理创伤的感情，无力感、被动感</string>
+    <string name="树枝1">• 现实生活与空想均能满足，在环境中适应的工作、愉快地生活、愿意滋养、养护他人，愿主动与人交往</string>
+    <string name="树枝2">• 表示追求环境的满足、与他人交际的适应性、象征实现目标的力量、能力</string>
+    <string name="树枝3">• 不能进行良好交际，有抵抗感</string>
+    <string name="树枝粗大">• 匮乏感、无力感</string>
+    <string name="树枝横上生长">• 具有敌意、冲动与攻击性</string>
+    <string name="树枝路径">• 有明确的计划性；做事有毅力，有始有终</string>
+    <string name="树枝细致绘画">• 感受性丰富、对外界刺激能做出良好反映</string>
+    <string name="树枝小">• 无法从环境中得到满足</string>
+    <string name="树枝折断">• 成长过程中遇到的挫折与阻碍；受到心理创伤的感情，无力感、被动感</string>
 
     //树
-    <string name="狂风中的树">自己不能控制的外力影响和支配</string>
-    <string name="微风中的树">喜欢幻想、易受外界影响</string>
-    <string name="松树">上进心强同时能自我控制、循序渐进 ； 女性较男性化</string>
-    <string name="椰树">追求艺术和感受、内向、优柔寡断；女性追求完美，男性较女性化</string>
-    <string name="竹子">清高</string>
-    <string name="梅花">高傲</string>
-    <string name="柳树">情绪不稳定、多变，有表演才能</string>
-    <string name="很大的树">不服从和对权威的违抗</string>
-    <string name="不对称的树">一种成长过程中的不平衡发展，或发展中能量分配的不平衡</string>
-    <string name="倒心形冠">可能缺乏创造性、没有攻击性；有犹豫不决的倾向，缺乏持久的毅力</string>
-    <string name="平冠">感到由于外界压力，妨碍自我的充分发展</string>
-    <string name="云状冠">成长过程中，一直把能量消耗在某个方面，缺乏方向性</string>
-    <string name="圆圈状的树冠">成长过程中，一直把能量消耗在某个方面，缺乏方向性</string>
-    <string name="强调涂鸦线条">焦虑</string>
-    <string name="右侧阴影">社交性好、适应性强</string>
-    <string name="左侧阴影">内向、压抑自己，很难表露自己</string>
-    <string name="直接有树干到单线树枝">智能与性格都有轻度迟滞、最近有重大外伤体验</string>
-    <string name="枯树">自卑、自贬、抑郁</string>
+    <string name="狂风中的树">• 自己不能控制的外力影响和支配</string>
+    <string name="微风中的树">• 喜欢幻想、易受外界影响</string>
+    <string name="松树">• 上进心强同时能自我控制、循序渐进</string>
+    <string name="椰树">• 追求艺术和感受、内向、优柔寡断</string>
+    <string name="竹子">• 有骨气，有着刚正不阿、坚持自我的意义</string>
+    <string name="梅花">• 不屈不挠，坚韧不拔，自强不息，奋勇当先的精神品质</string>
+    <string name="柳树">• 情绪不稳定、多变，有表演才能</string>
+    <string name="很大的树">• 不服从和对权威的违抗</string>
+    <string name="不对称的树">• 一种成长过程中的不平衡发展，或发展中能量分配的不平衡</string>
+    <string name="倒心形冠">• 可能缺乏创造性、没有攻击性；有犹豫不决的倾向，缺乏持久的毅力</string>
+    <string name="平冠">• 感到由于外界压力，妨碍自我的充分发展</string>
+    <string name="云状冠">• 成长过程中，一直把能量消耗在某个方面，缺乏方向性</string>
+    <string name="圆圈状的树冠">• 成长过程中，一直把能量消耗在某个方面，缺乏方向性</string>
+    <string name="强调涂鸦线条">• 焦虑</string>
+    <string name="右侧阴影">• 社交性好、适应性强</string>
+    <string name="左侧阴影">• 内向、压抑自己，很难表露自己</string>
+    <string name="直接有树干到单线树枝">• 智能与性格都有轻度迟滞、最近有重大外伤体验</string>
+    <string name="枯树">• 自卑、自贬、抑郁</string>
 
     //发型
-    <string name="头大">对自己智慧等评价较高;不满意自己体格;自负;求知欲强，易空想</string>
-    <string name="头小">存在缺乏感、无力感</string>
-    <string name="头发浓密">做事仔细，追求完美,但烦恼多，有自恋倾向</string>
-    <string name="头发稀疏">体力不好、性别认同上有问题</string>
-    <string name="直长发">淳朴、简单、缺乏灵性</string>
-    <string name="短发">干练、利落、控制欲强</string>
-    <string name="寸板头">办事干净利索、控制欲强</string>
-    <string name="竖起来的头发">攻击性强</string>
-    <string name="女性化刘海">自恋、爱美</string>
-    <string name="画一撮毛">幼稚</string>
-    <string name="光头">狡猾，自我防御强</string>
-    <string name="一个辫子向上">内心力量强</string>
-    <string name="三毛式">退缩的倾向，人际关系的畏缩以及自我防卫</string>
-    <string name="卷发">易于被外界影响</string>
-    <string name="五官模糊">退缩的倾向，人际关系的畏缩以及自我防卫</string>
-    <string name="过分强调五官">用攻击性来弥补自己的匮乏感和软弱</string>
-    <string name="注重脸部">在乎面子</string>
+    <string name="头大">• 对自己智慧等评价较高;不满意自己体格;自负;求知欲强，易空想</string>
+    <string name="头小">• 存在缺乏感、无力感</string>
+    <string name="头发浓密">• 做事仔细，追求完美,但烦恼多</string>
+    <string name="头发稀疏">• 体力不好、性别认同上有问题</string>
+    <string name="直长发">• 淳朴、简单</string>
+    <string name="短发">• 干练、利落</string>
+    <string name="寸板头">• 办事干净利索</string>
+    <string name="竖起来的头发">• 攻击性强</string>
+    <string name="女性化刘海">• 自恋、爱美</string>
+    <string name="画一撮毛">• 幼稚</string>
+    <string name="光头">• 狡猾，自我防御强</string>
+    <string name="一个辫子向上">• 内心力量强</string>
+    <string name="三毛式">• 退缩的倾向，人际关系的畏缩以及自我防卫</string>
+    <string name="卷发">• 易于被外界影响</string>
+    <string name="五官模糊">• 退缩的倾向，人际关系的畏缩以及自我防卫</string>
+    <string name="过分强调五官">• 用攻击性来弥补自己的匮乏感和软弱</string>
+    <string name="注重脸部">• 在乎面子</string>
     
     //嘴
-    <string name="嘴唇紧闭">有自我主张、有意志、坚强、攻击性、冲动的压抑</string>
-    <string name="呲牙咧嘴">被动、依赖，追求母爱和支持</string>
-    <string name="过分强调嘴">较为依赖 和不成熟有强烈的表达欲望</string>
-    <string name="张大口">努力争取到承认</string>
-    <string name="咬住型">性格狠、攻击性、口才好</string>
-    <string name="含住型">办事不急不慢、软攻击、两面派、僵持</string>
+    <string name="嘴唇紧闭">• 有自我主张、有意志、坚强</string>
+    <string name="呲牙咧嘴">• 被动、依赖，追求母爱和支持</string>
+    <string name="过分强调嘴">• 较为依赖 和不成熟有强烈的表达欲望</string>
+    <string name="张大口">• 努力争取到承认</string>
+    <string name="咬住型">• 性格狠、攻击性、口才好</string>
+    <string name="含住型">• 办事不急不慢、软攻击、两面派、僵持</string>
 
     //耳朵
-    <string name="一只耳朵大一只耳朵小">左耳进、右耳出</string>
-    <string name="大耳朵">对批评很敏感</string>
+    <string name="一只耳朵大一只耳朵小">• 左耳进、右耳出</string>
+    <string name="大耳朵">• 对批评很敏感</string>
     
     //衣服、躯干
-    <string name="士兵">好斗,个性较强</string>
-    <string name="小丑">不适应学校生活。有抑郁倾向</string>
-    <string name="牛仔">好斗，反抗及变强的愿望，烦躁不安,缺乏安全感</string>
-    <string name="头饰">自恋</string>
-    <string name="帽子">对外界有怀疑心、戒备心；合理化防御</string>
-    <string name="自画像背影">具有防御心理，不敢面对真实的自我，在人际交往中过分警惕</string>
-    <string name="没有五官">逃避人际关系，没有适应环境</string>
-    <string name="脸部有阴影">代表情绪障碍、自我评价低</string>
-    <string name="符号化的人">受测者有掩饰性，不愿表露自我</string>
-    <string name="西服">超我表现、追求文化品位、有强迫倾向</string>
-    <string name="水手">勇敢，向往远方</string>
-    <string name="领带">渴望成长</string>
+    <string name="士兵">• 好斗,个性较强</string>
+    <string name="小丑">• 不适应学校生活。有抑郁倾向</string>
+    <string name="牛仔">• 好斗，反抗及变强的愿望，烦躁不安,缺乏安全感</string>
+    <string name="头饰">• 自恋</string>
+    <string name="帽子">• 对外界有怀疑心、戒备心；合理化防御</string>
+    <string name="自画像背影">• 具有防御心理，不敢面对真实的自我，在人际交往中过分警惕</string>
+    <string name="没有五官">• 逃避人际关系，没有适应环境</string>
+    <string name="脸部有阴影">• 代表情绪障碍、自我评价低</string>
+    <string name="符号化的人">• 受测者有掩饰性，不愿表露自我</string>
+    <string name="西服">• 超我表现、追求文化品位</string>
+    <string name="水手">• 勇敢，向往远方</string>
+    <string name="领带">• 渴望成长</string>
 
-    <string name="只出现半身">自我意思比较模糊、还在自我整合的过程中</string>
+    <string name="只出现半身">• 自我意思比较模糊、还在自我整合的过程中</string>
     
     //眉毛
-    <string name="整齐有力的眉毛">干练、潇洒</string>
-    <string name="乱糟糟的眉毛">未成熟、粗野、冲动人格</string>
-    <string name="扫帚般的眉毛">不修边幅</string>
-    <string name="眉毛上扬">对别人的批判表现出不屑、轻蔑、自尊心强</string>
-    <string name="男化浓眉">对性、对力量的追求</string>
-    <string name="女化柳叶眉">爱美</string>
-    <string name="不画眉毛">重整体、轻细节</string>
-    <string name="大眼睛">个性较为敏感、感性、外向、好奇心、戒备心、爱美</string>
-    <string name="非常细小的眼镜">内向，自我反省、关注自我</string>
-    <string name="不画瞳孔">内心冲突、自恋、对环境和外在事物有敌意</string>
-    <string name="圆瞳孔">无生气、妄想、幻想</string>
-    <string name="一眼大一眼小">为人随和、和稀泥、有被忽视感</string>
+    <string name="整齐有力的眉毛">• 干练、潇洒</string>
+    <string name="乱糟糟的眉毛">• 未成熟、粗野、冲动人格</string>
+    <string name="扫帚般的眉毛">• 不修边幅</string>
+    <string name="眉毛上扬">• 对别人的批判表现出不屑、轻蔑、自尊心强</string>
+    <string name="男化浓眉">• 对力量的追求</string>
+    <string name="女化柳叶眉">• 爱美</string>
+    <string name="不画眉毛">• 重整体、轻细节</string>
+    <string name="大眼睛">• 个性较为敏感、感性、外向、好奇心、戒备心、爱美</string>
+    <string name="非常细小的眼镜">• 内向，自我反省、关注自我</string>
+    <string name="不画瞳孔">• 内心冲突、自恋、对环境和外在事物有敌意</string>
+    <string name="圆瞳孔">• 无生气、妄想、幻想</string>
+    <string name="一眼大一眼小">• 为人随和、和稀泥、有被忽视感</string>
     
     //人交互
-    <string name="没有胳膊">内疚感、罪恶感</string>
+    <string name="没有胳膊">• 内疚感、罪恶感</string>
 
     //附加
-    <string name="装饰物">多表示对生活的追求、显示欲、对外在形象非常看重</string>
-    <string name="下雨">目前情绪低落</string>
-    <string name="小草小花">心理年龄偏低</string>
-    <string name="月亮">代表忧郁</string>
-    <string name="云朵">表示对生活的关心，也有表示焦虑，缠绕在头脑中引起的焦虑事件，代表忧郁</string>
-    <string name="乌云">灾害，创伤，多愁善感，攻击性；易与权威人士抗衡，不满</string>
-    <string name="矮木和花">可能暗示着某些人</string>
-    <string name="山">表示迫求保护，安全。圆形山峰；尖锐山峰，努力奋斗和攻击性</string>
-    <string name="暗淡的太阳">目前状态较为忧愁</string>
-    <string name="四分之一的太阳">能量弱，动力不足</string>
-    <string name="远景大太阳">仿佛有人支撑，动力足</string>
-    <string name="落日">目前状态较为忧愁,但是心中仍有希望</string>
-    <string name="乌云画成如意">艺术化，与众不同，追求美</string>
-    <string name="栅栏">典型的防御心理，缺乏安全感。在生活中很少有安全、安心的感觉</string>
-    <string name="一排大雁">目标远，前途好</string>
-    <string name="鹰">个人奋斗</string>
-    <string name="喜鹊">对当前状态较为满足</string>
-    <string name="啄木鸟">内心可能有无法抹去的秘密或者阴影</string>
-    <string name="鱼">内心向往自由</string>
-    <string name="章鱼或水母">懒散</string>
-    <string name="彩虹">此时内心愉悦</string>
+    <string name="装饰物">• 多表示对生活的追求、显示欲、对外在形象非常看重</string>
+    <string name="下雨">• 目前情绪低落</string>
+    <string name="小草小花">• 心理年龄偏低</string>
+    <string name="月亮">• 代表忧郁</string>
+    <string name="云朵">• 表示对生活的关心，也有表示焦虑，缠绕在头脑中引起的焦虑事件，代表忧郁</string>
+    <string name="乌云">• 灾害，创伤，多愁善感，攻击性；易与权威人士抗衡，不满</string>
+    <string name="矮木和花">• 可能暗示着某些人</string>
+    <string name="山">• 表示迫求保护，安全。圆形山峰；尖锐山峰，努力奋斗和攻击性</string>
+    <string name="暗淡的太阳">• 目前状态较为忧愁</string>
+    <string name="四分之一的太阳">• 能量弱，动力不足</string>
+    <string name="远景大太阳">• 仿佛有人支撑，动力足</string>
+    <string name="落日">• 目前状态较为忧愁,但是心中仍有希望</string>
+    <string name="乌云画成如意">• 艺术化，与众不同，追求美</string>
+    <string name="栅栏">• 典型的防御心理，缺乏安全感。在生活中很少有安全、安心的感觉</string>
+    <string name="一排大雁">• 目标远，前途好</string>
+    <string name="鹰">• 个人奋斗</string>
+    <string name="喜鹊">• 对当前状态较为满足</string>
+    <string name="啄木鸟">• 内心可能有无法抹去的秘密或者阴影</string>
+    <string name="鱼">• 内心向往自由</string>
+    <string name="章鱼或水母">• 懒散</string>
+    <string name="彩虹">• 此时内心愉悦</string>
     
     //路
-    <string name="路是弯曲的">间接性交往，自我保护，人际交往圆滑</string>
-    <string name="路向左">重视老朋友</string>
-    <string name="路向右">重视新朋友</string>
+    <string name="路是弯曲的">• 间接性交往，自我保护，人际交往圆滑</string>
+    <string name="路向左">• 重视老朋友</string>
+    <string name="路向右">• 重视新朋友</string>
     
     //路交互
-    <string name="离房子比较远的路">表面上与人交往，实际内心十分想逃避</string>
-    <string name="路在窗下">有出走倾向</string>
-    <string name="树木遮屋">强烈的依赖欲求，被双亲支配感、亲子关系紧张</string>
+    <string name="离房子比较远的路">• 表面上与人交往，实际内心十分想逃避</string>
+    <string name="路在窗下">• 有出走倾向</string>
+    <string name="树木遮屋">• 强烈的依赖欲求，被双亲支配感、亲子关系紧张</string>
     
     //整体交互
-    <string name="占整张纸的人物">在环境的体验到自我的不足感,倾向于通过躯体对空间的占有来应对不足感引发的焦虑,并获得确定感</string>
-    <string name="树占满纸张">潜意识的自我的不足感引发焦虑，倾向于通过树对空间的占有来应对.并获得确定感</string>
-    <string name="房子占满纸张">强调对环境的控制.应对环境或自我不足引发的焦虑</string>
-    <string name="过小">不适应环境、自我抑制</string>
+    <string name="占整张纸的人物">• 在环境的体验到自我的不足感,倾向于通过躯体对空间的占有来应对不足感引发的焦虑,并获得确定感</string>
+    <string name="树占满纸张">• 潜意识的自我的不足感引发焦虑，倾向于通过树对空间的占有来应对.并获得确定感</string>
+    <string name="房子占满纸张">• 强调对环境的控制.应对环境或自我不足引发的焦虑</string>
+    <string name="过小">• 不适应环境、自我抑制</string>
 
 </resources>
